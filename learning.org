@@ -1,0 +1,70 @@
+* todo list
+
+** Documents to Review
+= doc
+  |- kickstart.txt
+  |- tags
+= lua
+  |= custom
+  |  |= plugins
+  |  |  |- init.lua
+  |= kickstart
+  |  |= plugins
+  |  |  |- autopairs.lua
+  |  |  |- cmp.lua
+  |  |  |- conform.lua
+  |  |  |- debug.lua
+  |  |  |- gitsigns.lua
+  |  |  |- indent_line.lua
+  |  |  |- lint.lua
+  |  |  |- lspconfig.lua
+  |  |  |- mini.lua
+  |  |  |- neo-tree.lua
+  |  |  |- telescope.lua
+  |  |  |- todo-comments.lua
+  |  |  |- treesitter.lua
+  |  |  |- which-key.lua
+
+  |  |  |- gruvbox.lua
+  |  |  |- tokyonight.lua
+
+  |  |- health.lua
+
+  |- keymaps.lua
+  |- lazy-bootstrap.lua
+  |- lazy-plugins.lua
+  |- options.lua
+  |- settings.lua
+
+- .gitignore
+- .stylua.toml
+- init.lua
+- lazy-lock.json
+- learning.org
++ LICENSE.md
++ reADME.md
+
+** plugins to install
+alpha.lua
+
+---
+chatgpt.lua
+return {
+  "jackMort/ChatGPT.nvim",
+  event = "VeryLazy",
+  config = function()
+    require("chatgpt").setup()
+  end,
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "nvim-lua/plenary.nvim",
+    "folke/trouble.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+}
+---
+
+colorscheme.lua
+example.lua
+neorg.lua
+orgmode.lua

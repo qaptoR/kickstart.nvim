@@ -1,7 +1,6 @@
--- [[ Setting options ]]
+-- [[ Simple Options ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- For more options, you can see `:help option-list`
 
 -- import from lazyvim
 vim.opt.wrap = true
