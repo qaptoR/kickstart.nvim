@@ -1,70 +1,145 @@
 * todo list
+** In General
+   - Learn to use ChatGPT.nvim plugin
+   - Learn to use orgmode.nvim plugin
+    - learn the table manipulation really well
+   - Learn to use neorg.nvim plugin
+   - mirror mappings between emacs and nvim
+   - Learn Debug Adapter Protocol (dap) debug.lua
+   - figure out which mini.nvim modules I want to include
+   - finish documentation of the current key-mappings (get rid of '+prefix')
 
-** Documents to Review
-= doc
-  |- kickstart.txt
-  |- tags
-= lua
-  |= custom
-  |  |= plugins
-  |  |  |- init.lua
-  |= kickstart
-  |  |= plugins
-  |  |  |- autopairs.lua
-  |  |  |- cmp.lua
-  |  |  |- conform.lua
-  |  |  |- debug.lua
-  |  |  |- gitsigns.lua
-  |  |  |- indent_line.lua
-  |  |  |- lint.lua
-  |  |  |- lspconfig.lua
-  |  |  |- mini.lua
-  |  |  |- neo-tree.lua
-  |  |  |- telescope.lua
-  |  |  |- todo-comments.lua
-  |  |  |- treesitter.lua
-  |  |  |- which-key.lua
 
-  |  |  |- gruvbox.lua
-  |  |  |- tokyonight.lua
+** Features from Doom Emacs to emulate
+   - gpt send entire buffer
+   - clion -- align text swiftly
+   - general key mappings
+   - snipe -- keybind for better 'forward search'
+   - yasnippets -- some kind of snippet feature
+   - setup keybind for move line up/down
 
-  |  |- health.lua
 
-  |- keymaps.lua
-  |- lazy-bootstrap.lua
-  |- lazy-plugins.lua
-  |- options.lua
-  |- settings.lua
+** Plugin files to Review
+   = doc
+     |- kickstart.txt
+     |- tags
+   = lua
+     |= custom
+     |  |= plugins
+     |  |  |- init.lua
+     |= kickstart
+     |  |= plugins
+     |  |f |- autopairs.lua
+              |- 'hrsh7th/nvim-cmp' - see:cmp.lua
+     |  |f |- cmp.lua
+              |- 'L3MON4D3/LuaSnip'
+                  |- 'rafamadriz/friendly-snippets' - optional:off
+              |- 'saadparwaiz1/cmp_luasnip'
+              |- 'hrsh7th/cmp-nvim-lsp'
+              |- 'hrsh7th/cmp-path'
+     |  |f |- conform.lua
+     |  |f |- debug.lua
+              |- 'rcarriga/nvim-dap-ui'
+              |- 'nvim-neotest/nvim.nio'
+            p |- 'williamboman/mason.nvim'
+              |- 'jay-babu/mason-nvim-dap.nvim'
+              |- 'leoluz/nvim-dap-go'
+     |  |f |- gitsigns.lua
+     |  |f |- indent_line.lua
+     |  |f |- lint.lua
+     |  |  |- lspconfig.lua - neovim direct repo (don't fork?)
+            p |- 'williamboman/mason.nvim' 
+              |- 'williamboman/mason-lspconfig.nvim' 
+              |- 'WhoIsSethDaniel/mason-tool-installer.nvim' 
+              |- 'j-hui/fidget.nvim' 
+              |- 'folke/neodev.nvim' 
+     |  |f |- mini.lua
+            i  ○ mini.ai 
+            i  ○ mini.surround 
+               ○ mini.bufremove 
+               ○ mini.comment 
+               ○ mini.indentscope 
+               ○ mini.pairs 
+     |  |f |- neo-tree.lua
+            p |- 'nvim-lua/plenary.nvim' 
+              |- 'nvim-tree/nvim-web-devicons' 
+              |- 'MunifTanjim/nui.nvim' 
+     |  |f |- telescope.lua
+              |- 'nvim-tree/nvim-web-devicons' 
+              |- 'nvim-telescope/telescope-ui-select.nvim' 
+              |- 'nvim-telescope/telescope-fzf-native.nvim' 
+     |  |f |- todo-comments.lua
+            p |- 'nvim-lua/plenary.nvim' 
+     |  |f |- treesitter.lua
+     |  |f |- which-key.lua
+     |  |- health.lua
 
-- .gitignore
-- .stylua.toml
-- init.lua
-- lazy-lock.json
-- learning.org
-+ LICENSE.md
-+ reADME.md
+   - .stylua.toml
+   - init.lua
+   + LICENSE.md
+   + README.md
+
 
 ** plugins to install
-alpha.lua
+   -- {{ just learned about }}
+   - telescope-project (and other telescope direct addons)
+    - OR ○ project.nvim 
 
----
-chatgpt.lua
-return {
-  "jackMort/ChatGPT.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("chatgpt").setup()
-  end,
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    "nvim-lua/plenary.nvim",
-    "folke/trouble.nvim",
-    "nvim-telescope/telescope.nvim",
-  },
-}
----
+   -- {{ Personal Choice }}
+   - alpha.lua
+   - colorscheme.lua
+   - example.lua
+   - neorg.lua
 
-colorscheme.lua
-example.lua
-neorg.lua
-orgmode.lua
+   -- {{ From Lazyvim }}
+   ○ bufferline.nvim 
+   ○ catppuccin 
+   ○ cmp-buffer 
+   ○ dashboard-nvim 
+   ○ dressing.nvim 
+   ○ flash.nvim 
+   ○ friendly-snippets 
+   ○ lazydev.nvim 
+   ○ LazyVim 
+   ○ luvit-meta 
+   ○ neoconf.nvim 
+   ○ noice.nvim 
+   ○ nvim-notify 
+   ○ nvim-snippets 
+   ○ nvim-spectre 
+   ○ nvim-treesitter-context 
+   ○ nvim-treesitter-textobjects 
+   ○ nvim-ts-autotag 
+   ○ nvim-ts-context-commentstring 
+   ○ persistence.nvim 
+   ○ ts-comments.nvim 
+   ○ vim-startuptime 
+
+
+** mappings that are broken
+   WhichKey: checking conflicting keymaps ~
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"o"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"v"**, lhs: **"a"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"v"**, lhs: **"i"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"sF"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"sr"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"sh"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"sf"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"sd"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"gc"**
+   - rhs: `<Plug>(comment_toggle_linewise)`
+   - WARNING conflicting keymap exists for mode **"n"**, lhs: **"gb"**
+   - rhs: `<Plug>(comment_toggle_blockwise)`
+   - WARNING conflicting keymap exists for mode **"o"**, lhs: **"a"**
+   - rhs: ` `
+   - WARNING conflicting keymap exists for mode **"o"**, lhs: **"i"**
+   - rhs: ` `
+

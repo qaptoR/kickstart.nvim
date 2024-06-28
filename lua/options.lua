@@ -3,16 +3,19 @@
 -- For more options, you can see `:help option-list`
 
 -- import from lazyvim
-vim.opt.wrap = true
-vim.opt.breakindent = true
-vim.opt.linebreak = true
+vim.opt.wrap = true -- wrap lines of text
+vim.opt.breakindent = true -- something
+vim.opt.linebreak = true -- something
 -- vim.g.python3_host_prog = "C:\\Python312\\python.exe"
 -- vim.cmd("lua vim.b.miniindentscope_disable = true")
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = 'yes'
-vim.opt.cursorline = true
+-- Set highlight on search
+vim.opt.hlsearch = true
+
+vim.opt.number = true -- show line numbers
+vim.opt.relativenumber = true -- line numbers relative to cursorline
+vim.opt.signcolumn = 'yes' -- show column for file-status signs
+vim.opt.cursorline = true -- highlight line with cursor
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'

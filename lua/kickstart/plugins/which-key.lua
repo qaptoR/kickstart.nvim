@@ -10,8 +10,7 @@
 -- normal autocommands events (`:help autocmd-events`).
 --
 -- Then, because we use the `config` key, the configuration only runs
--- after the plugin has been loaded:
---  config = function() ... end
+-- after the plugin has been loaded: config = function() ... end
 
 return {
   { -- Useful plugin to show you pending keybinds.
@@ -38,4 +37,5 @@ return {
     end,
   },
 }
+
 -- vim: ts=2 sts=2 sw=2 et
