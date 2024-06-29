@@ -1,8 +1,11 @@
 * todo list
 ** In General
-   - Learn to use ChatGPT.nvim plugin
+   - Learn to use [ChatGPT.nvim, Gp.nvim] plugins
+    - fork and edit into full suite of gpt tools
+
    - Learn to use orgmode.nvim plugin
     - learn the table manipulation really well
+
    - Learn to use neorg.nvim plugin
    - mirror mappings between emacs and nvim
    - Learn Debug Adapter Protocol (dap) debug.lua
@@ -11,23 +14,30 @@
 
 
 ** Features from Doom Emacs to emulate
-   - gpt send entire buffer
    - general key mappings
+   - gpt send entire buffer
    - snipe -- keybind for better 'forward search'
    - yasnippets -- some kind of snippet feature
    - setup keybind for move line up/down
+   - create/manage tabs/buffers
 
 
 ** Plugin files to Review
    = kickstart
      |= plugins
+     |f |- chatgpt.lua
+           |- 'MunifTanjim/nui.nvim',
+           |- 'nvim-lua/plenary.nvim',
+           |- 'folke/trouble.nvim',
+           |- 'nvim-telescope/telescope.nvim',
      |f |- autopairs.lua
            |- 'hrsh7th/nvim-cmp' - see:cmp.lua
      |f |- cmp.lua
            |- 'L3MON4D3/LuaSnip'
                |- 'rafamadriz/friendly-snippets' - optional:off
-           |- 'saadparwaiz1/cmp_luasnip'
-           |- 'hrsh7th/cmp-nvim-lsp'
+
+           |- 'saadparwaiz1/cmp_luasnip' 
+           |- 'hrsh7th/cmp-nvim-lsp' 
            |- 'hrsh7th/cmp-path'
      |f |- conform.lua
      |f |- debug.lua
