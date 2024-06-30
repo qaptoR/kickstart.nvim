@@ -5,17 +5,20 @@ return {
       -- [[ Better Around/Inside textobjects ]]
       --
       -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [']quote
-      --  - ci'  - [C]hange [I]nside [']quote
+      -- n :va)  - V.isually A.round ).parens, select
+      -- n :yinq - Y.ank I.nside N.ext '.quotes
+      -- n :ci'  - C.hange I.nside '.quotes
       require('mini.ai').setup { n_lines = 500 }
+      --
 
       -- [[ Add/delete/replace surroundings ]]
       --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
+      -- Examples:
+      -- n :saiw) - A.dd I.nner W.ord ).parens
+      -- n :sd'   - D.elete '.quotes
+      -- n :sr)'  - R.eplace ).parens '.quotes
       require('mini.surround').setup()
+      --
 
       -- [[ Simple and easy statusline ]]
       --
@@ -23,24 +26,31 @@ return {
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
       statusline.setup { use_icons = vim.g.have_nerd_font }
-
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
+      --
+      -- Set the section for cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
       end
+      --
 
       -- [[ Align Text Visually ]]
+      --
       require('mini.align').setup()
+      --
+
+      -- [[ Create pairs of brackets, parens, braces ]]
+      --
+      -- todo keymaps:
+      -- n :L'tp - toggle auto-pairs
+      -- require('mini.pairs').setup()
+      --
 
       -- TODO
       -- require('mini.bufremove').setup()
       -- require('mini.comment').setup()
       -- require('mini.indentscope').setup()
-      -- require('mini.pairs').setup()
-
+      --
       -- require('mini.animate').setup()
       -- require('mini.base16').setup()
       -- require('mini.basics').setup()

@@ -28,28 +28,40 @@ return {
       require('which-key').setup()
 
       -- Document existing/core key chains
-      require('which-key').register {
+      require('which-key').register({ -- Normal Mode
         -- [[ KICKSTART ]]
-        ['<leader>c'] = { name = 'C/ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = 'D/ocument', _ = 'which_key_ignore' },
-        ['<leader>R'] = { name = 'R/ename', _ = 'which_key_ignore' }, -- REMAP
-        ['<leader>s'] = { name = 'S/earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = 'W/orkspace', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = 'T/oggle', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'H/unk, Git', _ = 'which_key_ignore' },
+        --
+        ['<leader>c'] = { name = 'C_ode', _ = 'which_key_ignore' },
+        ['<leader>d'] = { name = 'D_ocument', _ = 'which_key_ignore' },
+        ['<leader>R'] = { name = 'R_ename', _ = 'which_key_ignore' }, -- REMAP
+        ['<leader>s'] = { name = 'S_earch', _ = 'which_key_ignore' },
+        ['<leader>w'] = { name = 'W_orkspace', _ = 'which_key_ignore' },
+        ['<leader>t'] = { name = 'T_oggle', _ = 'which_key_ignore' },
+        ['<leader>h'] = { name = 'H_unk, Git', _ = 'which_key_ignore' },
+        --
 
         -- [[ PERSONAL ]]
-        ['<leader>g'] = { name = 'G/PT Tools', _ = 'which_key_ignore' },
-        ['<leader>q'] = { name = 'Q/aptor', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = 'R/occo', _ = 'which_key_ignore' },
-        ['<leader>p'] = { name = 'P/icker', _ = 'which_key_ignore' },
-        ['<leader>o'] = { name = 'O/rgmode', _ = 'which_key_ignore' },
-      }
+        --
+        ['<leader>g'] = { name = 'G_PT Tools', _ = 'which_key_ignore' },
+        ['<leader>q'] = { name = 'Q_aptor', _ = 'which_key_ignore' },
+        ['<leader>r'] = { name = 'R_occo', _ = 'which_key_ignore' },
+        ['<leader>p'] = { name = 'P_icker', _ = 'which_key_ignore' },
+        ['<leader>o'] = { name = 'O_rgmode', _ = 'which_key_ignore' },
+        --
 
-      -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'H/unk, Git' },
-        ['<leader>g'] = { 'G/PT Tools' },
+        -- [[  TODO: ]]
+        --
+        -- ['<leader>b']
+        -- ['<leader>B']
+        -- ['<leader>D']
+        -- ['<leader>f']
+        -- ['<leader>v'] = { name = '', _ = 'which_key_ignore' }, -- can't be 'visual' because that's a mode-specific
+      }, { mode = 'n' })
+
+      require('which-key').register({ -- Visual Mode
+        ['<leader>h'] = { 'H_unk, Git' },
+        ['<leader>g'] = { 'G_PT Tools' },
+        ['<leader>s'] = { 'S_ubstitute' },
       }, { mode = 'v' })
     end,
   },

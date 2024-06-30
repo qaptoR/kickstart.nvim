@@ -72,6 +72,11 @@ vim.keymap.set('v', '<A-S-j>', '<cmd>m +1<cr>', { desc = 'Move line down, update
 vim.keymap.set('v', '<A-S-k>', '<cmd>m -2<cr>', { desc = 'Move line up, update selection' })
 --
 
+-- [[ Visual Selection ]]
+--
+vim.keymap.set('v', '<leader>sb', ':s/\\%V', { desc = 'By B_lock Selection' })
+--
+
 -- [[ TODO Keymaps]]
 --
 -- n :L'l - open Lazy
@@ -114,6 +119,7 @@ vim.keymap.set('v', '<A-S-k>', '<cmd>m -2<cr>', { desc = 'Move line up, update s
 -- n :L'tT - toggle Treesitter highlight
 -- n :L'tw - toggle word wrap
 --
+--
 -- Lazygit -- or any git tool
 -- n :L'gg - Lazygit (root dir)
 -- n :L'gG - Lazygit (current dir)
@@ -139,12 +145,19 @@ vim.keymap.set('v', '<A-S-k>', '<cmd>m -2<cr>', { desc = 'Move line up, update s
 -- n: L'w-
 -- n: L'w|
 --
-
--- [[ Disable arrow keys in normal mode ]]
 --
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+-- [[ Plugin specific ]]
+--
+-- to be applied in the specific plugin file
+-- documented here initially for organization
+--
+-- [mini.pairs]
+--
+-- [neo-tree]
+-- n :L'be - buffer explorer
+-- n :L'e - explorer NeoTree (root)
+-- n :L'E - explorer NeoTree (cwd)
+-- n :L'ge - git explorer, NeoTree?
+--
 
 -- vim: ts=2 sts=2 sw=2 et
