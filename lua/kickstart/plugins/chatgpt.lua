@@ -3,7 +3,13 @@ return {
     'jackMort/ChatGPT.nvim',
     event = 'VeryLazy',
     config = function()
-      require('chatgpt').setup()
+      require('chatgpt').setup {
+        openai_params = {
+          model = function()
+            return 'gpt-4o'
+          end,
+        },
+      }
 
       require('which-key').register {
         ['<leader>'] = {

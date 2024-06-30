@@ -1,117 +1,123 @@
 * todo list
+** new plugin ideas
+- bufferline.nvim adaptation called 'viewline.nvim'
+ - instead of buffers, each window has a set of 'views'
+ - each view is a representation of a buffer attached to a specific window
+ - these will work like tabs in a frame of vscode
+ - closing a view does not close the buffer it represents
+ 
+
 ** In General
-   - Learn to use [ChatGPT.nvim, Gp.nvim] plugins
-    - fork and edit into full suite of gpt tools
+- Learn to use [ChatGPT.nvim, Gp.nvim] plugins
+- fork and edit into full suite of gpt tools
 
-   - Learn to use orgmode.nvim plugin
-    - learn the table manipulation really well
+- Learn to use orgmode.nvim plugin
+- learn the table manipulation really well
 
-   - Learn to use neorg.nvim plugin
-   - mirror mappings between emacs and nvim
-   - Learn Debug Adapter Protocol (dap) debug.lua
-   - figure out which mini.nvim modules I want to include
-   - finish documentation of the current key-mappings (get rid of '+prefix')
+- Learn to use neorg.nvim plugin
+- mirror mappings between emacs and nvim
+- Learn Debug Adapter Protocol (dap) debug.lua
+- figure out which mini.nvim modules I want to include
+- finish documentation of the current key-mappings (get rid of '+prefix')
 
 
 ** Features from Doom Emacs to emulate
-   - general key mappings
-   - gpt send entire buffer
-   - snipe -- keybind for better 'forward search'
-   - yasnippets -- some kind of snippet feature
-   - setup keybind for move line up/down
-   - create/manage tabs/buffers
+- general key mappings
+- gpt send entire buffer
+- snipe -- keybind for better 'forward search'
+- yasnippets -- some kind of snippet feature
+- setup keybind for move line up/down
+- create/manage tabs/buffers
 
 
 ** Plugin files to Review
-   = kickstart
-     |= plugins
-     |f |- chatgpt.lua
-           |- 'MunifTanjim/nui.nvim',
-           |- 'nvim-lua/plenary.nvim',
-           |- 'folke/trouble.nvim',
-           |- 'nvim-telescope/telescope.nvim',
-     |f |- autopairs.lua
-           |- 'hrsh7th/nvim-cmp' - see:cmp.lua
-     |f |- cmp.lua
-           |- 'L3MON4D3/LuaSnip'
-               |- 'rafamadriz/friendly-snippets' - optional:off
-
-           |- 'saadparwaiz1/cmp_luasnip' 
-           |- 'hrsh7th/cmp-nvim-lsp' 
-           |- 'hrsh7th/cmp-path'
-     |f |- conform.lua
-     |f |- debug.lua
-           |- 'rcarriga/nvim-dap-ui'
-           |- 'nvim-neotest/nvim.nio'
-         p |- 'williamboman/mason.nvim'
-           |- 'jay-babu/mason-nvim-dap.nvim'
-           |- 'leoluz/nvim-dap-go'
-     |f |- gitsigns.lua
-     |f |- indent_line.lua
-     |f |- lint.lua
-     |  |- lspconfig.lua - neovim direct repo (don't fork?)
-         p |- 'williamboman/mason.nvim'
-           |- 'williamboman/mason-lspconfig.nvim'
-           |- 'WhoIsSethDaniel/mason-tool-installer.nvim'
-           |- 'j-hui/fidget.nvim'
-           |- 'folke/neodev.nvim'
-     |f |- neo-tree.lua
-         p |- 'nvim-lua/plenary.nvim'
-           |- 'nvim-tree/nvim-web-devicons'
-           |- 'MunifTanjim/nui.nvim'
-     |f |- telescope.lua
-         p |- 'nvim-lua/plenary.nvim'
-           |- 'nvim-tree/nvim-web-devicons'
-           |- 'nvim-telescope/telescope-ui-select.nvim'
-           |- 'nvim-telescope/telescope-fzf-native.nvim'
-           |- 'nvim-telescope/telescope-file-browser.nvim'
-           |- 'nvim-telescope/telescope-project.nvim'
-     |f |- todo-comments.lua
-         p |- 'nvim-lua/plenary.nvim' 
-     |f |- treesitter.lua
+|= plugins
+|f |- chatgpt.lua
+      |- 'MunifTanjim/nui.nvim',
+      |- 'nvim-lua/plenary.nvim',
+      |- 'folke/trouble.nvim',
+      |- 'nvim-telescope/telescope.nvim',
+|f |- autopairs.lua
+      |- 'hrsh7th/nvim-cmp' - see:cmp.lua
+|f |- cmp.lua
+      |- 'L3MON4D3/LuaSnip'
+          |- 'rafamadriz/friendly-snippets' - optional:off
+      |- 'saadparwaiz1/cmp_luasnip' 
+      |- 'hrsh7th/cmp-nvim-lsp' 
+      |- 'hrsh7th/cmp-path'
+|f |- conform.lua
+|f |- debug.lua
+      |- 'rcarriga/nvim-dap-ui'
+      |- 'nvim-neotest/nvim.nio'
+    p |- 'williamboman/mason.nvim'
+      |- 'jay-babu/mason-nvim-dap.nvim'
+      |- 'leoluz/nvim-dap-go'
+|f |- gitsigns.lua
+|f |- indent_line.lua
+|f |- lint.lua
+|  |- lspconfig.lua - neovim direct repo (don't fork?)
+    p |- 'williamboman/mason.nvim'
+      |- 'williamboman/mason-lspconfig.nvim'
+      |- 'WhoIsSethDaniel/mason-tool-installer.nvim'
+      |- 'j-hui/fidget.nvim'
+          |- 'folke/neodev.nvim'
+|f |- neo-tree.lua
+    p |- 'nvim-lua/plenary.nvim'
+      |- 'nvim-tree/nvim-web-devicons'
+      |- 'MunifTanjim/nui.nvim'
+|f |- telescope.lua
+    p |- 'nvim-lua/plenary.nvim'
+      |- 'nvim-tree/nvim-web-devicons'
+      |- 'nvim-telescope/telescope-ui-select.nvim'
+      |- 'nvim-telescope/telescope-fzf-native.nvim'
+      |- 'nvim-telescope/telescope-file-browser.nvim'
+      |- 'nvim-telescope/telescope-project.nvim'
+|f |- todo-comments.lua
+    p |- 'nvim-lua/plenary.nvim' 
+|f |- treesitter.lua
 
 
 ** plugins to install
-   -- {{ Themes }}
-   - 'folke/material.nvim'
-   ○ catppuccin 
+-- {{ Themes }}
+- 'folke/material.nvim'
+○ catppuccin 
 
 
-   -- {{ plugins to consider }}
-   - 'tommcdo/vim-lion'
-   - 'Shatur/neovim-session-manager'
-   - 'natecraddock/workspaces.nvim'
-   - 'folke/lualine.nvim'
+-- {{ plugins to consider }}
+- 'tommcdo/vim-lion'
+- 'Shatur/neovim-session-manager'
+- 'natecraddock/workspaces.nvim'
+- 'folke/lualine.nvim'
 
 
-   -- {{ Personal Choice }}
-   - alpha.lua
-   - colorscheme.lua
-   - example.lua
-   - neorg.lua
+-- {{ Personal Choice }}
+- alpha.lua
+- colorscheme.lua
+- example.lua
+- neorg.lua
 
 
-   -- {{ From Lazyvim }}
-   ○ bufferline.nvim 
-   ○ cmp-buffer 
-   ○ dashboard-nvim 
-   ○ dressing.nvim 
-   ○ flash.nvim 
-   ○ friendly-snippets 
-   ○ lazydev.nvim 
-   ○ LazyVim 
-   ○ luvit-meta 
-   ○ neoconf.nvim 
-   ○ noice.nvim 
-   ○ nvim-notify 
-   ○ nvim-snippets 
-   ○ nvim-spectre 
-   ○ nvim-treesitter-context 
-   ○ nvim-treesitter-textobjects 
-   ○ nvim-ts-autotag 
-   ○ nvim-ts-context-commentstring 
-   ○ persistence.nvim 
-   ○ ts-comments.nvim 
-   ○ vim-startuptime 
+-- {{ From Lazyvim }}
+○ bufferline.nvim 
+○ cmp-buffer 
+○ dashboard-nvim 
+○ dressing.nvim 
+○ flash.nvim 
+○ friendly-snippets 
+○ lazydev.nvim 
+○ LazyVim 
+○ luvit-meta 
+○ neoconf.nvim 
+○ noice.nvim 
+○ nvim-notify 
+○ nvim-snippets 
+○ nvim-spectre 
+○ nvim-treesitter-context 
+○ nvim-treesitter-textobjects 
+○ nvim-ts-autotag 
+○ nvim-ts-context-commentstring 
+○ persistence.nvim 
+○ ts-comments.nvim 
+○ vim-startuptime 
 
 
